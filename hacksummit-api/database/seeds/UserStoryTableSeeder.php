@@ -30,8 +30,19 @@ class UserStoryTableSeeder extends Seeder
             ));
 
         $roleList = array('User', 'Staff', 'Admin');
-        $goalList = array('Place Order');
-        $businessValueList = array('I can place another order');
+        $goalList = array('Place Order', 'Login', 'Search', 'Checkout', 'Cancel Order', 'Logout', 'Add to Wishlist', 'Print Receipt','Add to cart', 'Empty Cart');
+        $businessValueList = array(
+            'I can place another order',
+            'I can access the dashboard',
+            'I can find my item'
+            'I can cancel my order',
+            'I can log out my account',
+            'I can have an official receipt',
+            'I can purchase later',
+            'I can purchase my order',
+            'I can add items to my cart',
+            'I can discard my cart'
+            );
 
         foreach(range(1,999) as $index)
         {
