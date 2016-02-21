@@ -8,7 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\SkillSet;
-use Response
+use Response;
 
 class SkillSetController extends Controller
 {
