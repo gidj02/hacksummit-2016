@@ -23,7 +23,6 @@ class TagTableSeeder extends Seeder
             Tag::create(array(
             'tag_name' => $tag[$index],
             'created_at' => Carbon::now(),
-            'update_at' => Carbon::now()
             ));
         }
     }

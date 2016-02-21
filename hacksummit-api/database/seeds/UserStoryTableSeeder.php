@@ -46,18 +46,18 @@ class UserStoryTableSeeder extends Seeder
 
         foreach(range(1, 99) as $index)
         {
-            $role = randomElement($roleList);
-            $goal = randomElement($goalList);
-            $businessValue = randomElement($businessValueList);
+            $role = $faker->randomElement($roleList);
+            $goal = $faker->randomElement($goalList);
+            $businessValue = $faker->randomElement($businessValueList);
 
             UserStory::create(array(
-                'user_story_name' => 'As a ' . $role . ', I want to' . $goal . ', so that ' . $businessValue . '.',
+                'user_story_name' => 'As a ' . $role . ', I want to ' . $goal . ', so that ' . $businessValue . '.',
                 'complexity' => $faker->randomElement([1, 2, 3, 5, 8, 13, 21]),
                 'tag_id' => $faker->randomDigitNotNull(),
                 'cat_id' => $faker->randomDigitNotNull(),
                 'proj_id' => $faker->randomDigitNotNull(),
                 'created_at' => Carbon::now(),
-                'end_at' => Carbon::now()->addHours(randomElement([1, 3, 8]))
+                'end_at' => Carbon::now()->addHours($faker->randomElement([1, 3, 8]))
                 ));
         }
 
