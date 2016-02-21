@@ -3,16 +3,16 @@ angular.module('agile')
 .controller('ProjectCtrl', ['$state', function ($state){
 	Project = this;
 
-	this.$state = $state;
 	Project.project = [];
 	Project.newTag = '';
+	Project.selectedTag = '';
 
 	Project.tags = [
-		{tag:"gino", ticked:false},
-		{ tag:"ben", ticked:false},
-		{ tag:"asdas", ticked:false},
-		{tag:"asd", ticked:false},
-		{tag:"ginaso", ticked:false}
+		{tag:"Transaction", ticked:false},
+		{tag:"PayPal", ticked:false},
+		{tag:"Login", ticked:false},
+		{tag:"Register", ticked:false},
+		{tag:"Withdraw", ticked:false}
 	];
 
 	Project.addTag = function (e) {
