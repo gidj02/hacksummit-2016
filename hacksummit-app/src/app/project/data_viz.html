@@ -1,0 +1,34 @@
+
+    <div class="modal-header">
+        <h1 class="modal-title">{{Data.project.name}}</h1>
+        <small class="font-bold">These are the User Stories per tag.</small>
+    </div>
+    <div class="modal-body">
+        <h3>These are the tasks with the corresponding hours spent in your team</b></h3>
+        <br>
+
+        <accordion close-others="oneAtATime">
+            <accordion-group ng-repeat="tag in Data.tags" heading="{{tag.tag}}" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
+               <table class="footable table table-stripped toggle-arrow-tiny">
+                    <tr>
+                        <td>After Login clear cache</td>
+                        <td><strong> 6 hrs.</strong></td>
+                    </tr>
+                    <tr>
+                        <td>After Login clear cache</td>
+                        <td><strong> 3 hrs.</strong></td>
+                    </tr>
+                    <tr>
+                        <td>After Login clear cache</td>
+                        <td><strong> 3 hrs.</strong></td>
+                    </tr>
+                   
+               </table>
+            </accordion-group>
+        </accordion>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-white" ng-click="Data.cancel()">Close</button>
+    </div>
+
+

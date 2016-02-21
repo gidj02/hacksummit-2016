@@ -1,11 +1,10 @@
 angular.module('agile')
 
-.controller('ProjectCtrl', ['$state', function ($state){
+.controller('ProjectCtrl', ['$state', '$uibModal', function ($state, $uibModal){
 	Project = this;
 
 	Project.project = [];
 	Project.newTag = '';
-	Project.selectedTag = '';
 
 	Project.tags = [
 		{tag:"Transaction", ticked:false},
@@ -20,4 +19,24 @@ angular.module('agile')
 		Project.tags.push({tag:Project.newTag, ticked:true});
 		Project.newTag = "";
 	}
+
+	Project.submitProject = function (e) {
+		e.preventDefault();
+		Project.openSuggestionModal();
+	}
+
+	Project.openSuggestionModal = function () {
+        var modalInstance = $uibModal.open({
+            templateUrl: 'app/project/data_viz.html',
+            controller: "ProjectDataModal as Data",
+            windowClass: "animated flipInY",
+            size: "lg",
+            resolve: {
+                data: function () {
+                    return Project.project;
+                }
+            }
+        });
+    }
+
 }])

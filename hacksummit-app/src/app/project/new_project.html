@@ -21,39 +21,41 @@
                     </div>
                 </div>
                 <div class="panel-body">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group"><label class="col-sm-4 control-label">Project Name :</label>
-                                <div class="col-sm-8">
-                                    <input type="text" class="form-control" ng-model="Project.project.name" placeholder="Name of your Project" required="">
-                                </div>
-                            </div>                                                      
-                        </div>
-                        <div class="col-md-6"></div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group"><label class="col-sm-4 control-label">Selected Tags :</label>
-                                <div class="col-sm-8">
-                                   <div
-                                        isteven-multi-select
-                                        input-model="Project.tags"
-                                        output-model="Project.selectedTags"
-                                        button-label="tag"
-                                        item-label="tag"
-                                        tick-property="ticked"
-                                        orientation="horizontal"
-                                        max-height="100px"
-                                        max-labels="5"
-                                    >
+                    <form ng-submit="Project.submitProject($event)">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group"><label class="col-sm-4 control-label">Project Name :</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" ng-model="Project.project.name" placeholder="Name of your Project" required="">
                                     </div>
-                                </div>                    
-                            </div>     
+                                </div>                                                      
+                            </div>
+                            <div class="col-md-6"></div>
                         </div>
-                    </div>
-                    <hr>
-                    <button type="submit" class="btn btn-success">Submit</button>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group"><label class="col-sm-4 control-label">Selected Tags :</label>
+                                    <div class="col-sm-8">
+                                       <div
+                                            isteven-multi-select
+                                            input-model="Project.tags"
+                                            output-model="Project.project.selectegtags"
+                                            button-label="tag"
+                                            item-label="tag"
+                                            tick-property="ticked"
+                                            orientation="horizontal"
+                                            max-height="100px"
+                                            max-labels="5"
+                                        >
+                                        </div>
+                                    </div>                    
+                                </div>     
+                            </div>
+                        </div>
+                        <hr>
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </form>
                 </div>
             </div>
         </div>
