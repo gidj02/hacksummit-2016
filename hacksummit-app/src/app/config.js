@@ -21,6 +21,19 @@ angular.module('agile')
         data:{
             pageTitle: "Welcome",
         },
+        resolve: {
+            loadPlugin: function ($ocLazyLoad) {
+                return $ocLazyLoad.load([
+                    {
+                        serie: true,
+                        files: [
+                                    'assets/libs/plugins/highcharts/highstocks.js',
+                                    'assets/libs/plugins/highcharts/exporting.js',
+                                ]
+                    },
+                ]);
+            }
+        }
     })
 
     .state('project', {    
