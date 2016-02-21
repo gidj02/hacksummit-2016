@@ -23,7 +23,7 @@
                                         <button type="button" class="btn btn-white"> <i class="fa fa-plus"></i> Add task</button>
                                 </span>
                     </div>
-                    <ul ui-sortable="sortableOptions" class="sortable-list connectList agile-list" ng-model="Agile.todoList">
+                    <ul ui-sortable="Agile.sortableOptions" class="sortable-list connectList agile-list" ng-model="Agile.todoList">
                         <li class="{{task.statusClass}}-element" ng-repeat="task in Agile.todoList">
                             {{task.content}}
                             <div class="agile-detail">
@@ -40,7 +40,7 @@
                 <div class="panel-body">
                     <h3>In Progress</h3>
                     <p class="small"><i class="fa fa-hand-o-up"></i> Drag task between list</p>
-                    <ul ui-sortable="sortableOptions" class="sortable-list connectList agile-list" ng-model="Agile.inProgressList">
+                    <ul ui-sortable="Agile.sortableOptions" class="sortable-list connectList agile-list" ng-model="Agile.inProgressList">
                         <li class="{{task.statusClass}}-element" ng-repeat="task in Agile.inProgressList">
                             {{task.content}}
                             <div class="agile-detail">
@@ -57,7 +57,7 @@
                 <div class="panel-body">
                     <h3>Completed</h3>
                     <p class="small"><i class="fa fa-hand-o-up"></i> Drag task between list</p>
-                    <ul ui-sortable="sortableOptions" class="sortable-list connectList agile-list" ng-model="Agile.completedList">
+                    <ul ui-sortable="Agile.sortableOptions" class="sortable-list connectList agile-list" ng-model="Agile.completedList">
                         <li class="{{task.statusClass}}-element" ng-repeat="task in Agile.completedList">
                             {{task.content}}
                             <div class="agile-detail">
