@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::group(['prefix' => 'api/v1', 'middleware' => 'cors'], function(){
+    Route::post('login', 'Auth\OAuthController@login');
+});
