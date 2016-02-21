@@ -12,3 +12,7 @@ function pageTitle($rootScope, $timeout) {
         }
     }
 };
+
+angular
+    .module('agile')
+    .directive('pageTitle', pageTitle)
