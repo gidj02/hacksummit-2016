@@ -17,5 +17,16 @@ Route::get('/', function () {
 
 
 Route::group(['prefix' => 'api/v1', 'middleware' => 'cors'], function(){
-    Route::post('login', 'Auth\OAuthController@login');
+    Route::get('category', 'CategoryController@index');
+    Route::get('member', 'MemberController@index');
+    Route::get('project', 'ProjectController@index');
+    Route::get('role', 'RoleController@index');
+    Route::get('skill_set', 'SkillSetController@index');
+    Route::get('skill', 'SkillController@index');
+    Route::get('tag', 'TagController@index');
+    Route::get('task', 'TaskController@index');
+    Route::get('team', 'TeamController@index');
+    Route::get('user_set', 'UserSetController@index');
+    Route::get('user_story', 'UserStoryController@index');
+
 });
