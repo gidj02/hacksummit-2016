@@ -10,6 +10,9 @@ use App\Http\Controllers\Controller;
 use App\Project;
 use Response;
 
+use App\Http\Controllers\ProjectController;
+use Computation\Process\DecisionSupportSystem;
+
 class ProjectController extends Controller
 {
     /**
@@ -86,5 +89,12 @@ class ProjectController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getUserStories(){
+        $data = {"Tag1", "Tag2", "Tag3"}
+        $sagot = new DecisionSupportSystem();
+        $x = $sagot->putangina("Putangina");
+        //return response()->json("Putangina");
     }
 }
