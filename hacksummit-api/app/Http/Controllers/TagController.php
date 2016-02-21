@@ -8,7 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Tag;
-use Response
+use Response;
 
 class TagController extends Controller
 {

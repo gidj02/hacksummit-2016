@@ -8,7 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\UserStory;
-use Response
+use Response;
 
 class UserStoryController extends Controller
 {
