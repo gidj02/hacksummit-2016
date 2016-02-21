@@ -25,8 +25,8 @@ class UserStoryTableSeeder extends Seeder
             'tag_id' => 1,
             'cat_id' => 1,
             'proj_id' => 1,
-            'created_at' => $faker-> Carbon::now(),
-            'end_at' => $faker-> Carbon::now()->addHours(1)
+            'created_at' => Carbon::now(),
+            'end_at' => Carbon::now()->addHours(1)
             ));
 
         $roleList = array('User', 'Staff', 'Admin');
@@ -34,7 +34,7 @@ class UserStoryTableSeeder extends Seeder
         $businessValueList = array(
             'I can place another order',
             'I can access the dashboard',
-            'I can find my item'
+            'I can find my item',
             'I can cancel my order',
             'I can log out my account',
             'I can have an official receipt',
@@ -51,13 +51,13 @@ class UserStoryTableSeeder extends Seeder
             $businessValue = randomElement($businessValueList);
 
             UserStory::create(array(
-                'user_story_name' => 'As a ' $role ', I want to' $goal ', so that ' $businessValue '.',
+                'user_story_name' => 'As a ' . $role . ', I want to' . $goal . ', so that ' . $businessValue . '.',
                 'complexity' => $faker->randomElement([1, 2, 3, 5, 8, 13, 21]),
                 'tag_id' => $faker->randomDigitNotNull(),
                 'cat_id' => $faker->randomDigitNotNull(),
                 'proj_id' => $faker->randomDigitNotNull(),
-                'created_at' => $faker-> Carbon::now(),
-                'end_at' => $faker-> Carbon::now()->addHours(randomElement([1, 3, 8]))
+                'created_at' => Carbon::now(),
+                'end_at' => Carbon::now()->addHours(randomElement([1, 3, 8]))
                 ));
         }
 
