@@ -37,8 +37,8 @@ function pageTitle($rootScope, $timeout) {
     return {
         link: function(scope, element) {
             var listener = function(event, toState, toParams, fromState, fromParams) {
-                var title = 'ForeCrop | Forecasting System for your Crop\' Production';
-                if (toState.data && toState.data.pageTitle) title = 'ForeCrop | ' + toState.data.pageTitle;
+                var title = 'DataScrum | Decision Support System for your Company';
+                if (toState.data && toState.data.pageTitle) title = 'DataScrum | ' + toState.data.pageTitle;
                 $timeout(function() {
                     element.text(title);
                 });

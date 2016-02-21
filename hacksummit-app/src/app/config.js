@@ -23,6 +23,30 @@ angular.module('agile')
         },
     })
 
+    .state('project', {    
+        templateUrl: "assets/views/base.html",
+        abstract: true,
+        url: "/project",
+    })
+    .state('project.new_project', {
+        url: "/new_project",
+        templateUrl: "app/project/new_project.html",
+        controller: 'ProjectCtrl as Project',
+        data:{
+            pageTitle: "Welcome",
+        },
+        resolve: {
+            loadPlugin: function ($ocLazyLoad) {
+                return $ocLazyLoad.load([
+                    {
+                        name: 'isteven-multi-select',
+                        files: ['assets/css/plugins/isteven-multi-select/isteven-multi-select.css','assets/libs/plugins/isteven-multi-select/isteven-multi-select.js']
+                    },
+                ]);
+            }
+        }
+    })
+
 
     /* =============================================
      * AngularJS - Toastr Configuratipon
