@@ -47,6 +47,32 @@ angular.module('agile')
         }
     })
 
+    .state('tools', {
+        templateUrl: "assets/views/base.html",
+        abstract: true,
+        url: "/tools"
+    })
+
+    .state('tools.agile_board', {
+            url: "/agile_board",
+            templateUrl: "app/tools/agile_board/agile_board.html",
+            controller: "AgileBoardCtrl as Agile",
+            data: { pageTitle: 'Agile board' },
+            resolve: {
+                loadPlugin: function ($ocLazyLoad) {
+                    return $ocLazyLoad.load([
+                        {
+                            name: 'ui.sortable',
+                            files: ['assets/libs/plugins/ui-sortable/sortable.js']
+                        },
+                        {
+                            files: ['assets/css/agile_board.css']
+                        }
+                    ]);
+                }
+            }
+        })
+
 
     /* =============================================
      * AngularJS - Toastr Configuratipon

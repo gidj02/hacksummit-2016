@@ -1,0 +1,76 @@
+<div class="pageheader">
+    <h1>Agile Board</h1>
+    <p class="description">Organized Task Here</p>
+    <div class="breadcrumb-wrapper hidden-xs">
+        <span class="label">You are here:</span>
+        <ol class="breadcrumb">
+            <li class="active">Agile Board</li>
+        </ol>
+    </div>
+</div>
+<section id="main-content" class="animated fadeInRight">
+
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3>To-do</h3>
+                    <p class="small"><i class="fa fa-hand-o-up"></i> Drag task between list</p>
+
+                    <div class="input-group">
+                        <input type="text" placeholder="Add new task. " class="input input-sm form-control">
+                                <span class="input-group-btn">
+                                        <button type="button" class="btn btn-white"> <i class="fa fa-plus"></i> Add task</button>
+                                </span>
+                    </div>
+                    <ul ui-sortable="sortableOptions" class="sortable-list connectList agile-list" ng-model="Agile.todoList">
+                        <li class="{{task.statusClass}}-element" ng-repeat="task in Agile.todoList">
+                            {{task.content}}
+                            <div class="agile-detail">
+                                <a href="#" class="pull-right btn btn-xs btn-white">{{task.tagName}}</a>
+                                <i class="fa fa-clock-o"></i> {{task.date}}
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3>In Progress</h3>
+                    <p class="small"><i class="fa fa-hand-o-up"></i> Drag task between list</p>
+                    <ul ui-sortable="sortableOptions" class="sortable-list connectList agile-list" ng-model="Agile.inProgressList">
+                        <li class="{{task.statusClass}}-element" ng-repeat="task in Agile.inProgressList">
+                            {{task.content}}
+                            <div class="agile-detail">
+                                <a href="#" class="pull-right btn btn-xs btn-white">{{task.tagName}}</a>
+                                <i class="fa fa-clock-o"></i> {{task.date}}
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3>Completed</h3>
+                    <p class="small"><i class="fa fa-hand-o-up"></i> Drag task between list</p>
+                    <ul ui-sortable="sortableOptions" class="sortable-list connectList agile-list" ng-model="Agile.completedList">
+                        <li class="{{task.statusClass}}-element" ng-repeat="task in Agile.completedList">
+                            {{task.content}}
+                            <div class="agile-detail">
+                                <a href="#" class="pull-right btn btn-xs btn-white">{{task.tagName}}</a>
+                                <i class="fa fa-clock-o"></i> {{task.date}}
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</section>
