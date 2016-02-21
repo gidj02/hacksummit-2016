@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Tag;
+use Validator;
 use Response;
 
 class TagController extends Controller
@@ -29,7 +30,7 @@ class TagController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -40,7 +41,19 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'tag_name' => 'required|max:250',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json($validator->errors());
+        }
+
+        $tag = Tag::create(
+            $request->only('tag_name')
+        );
+
+        return response()->json($tag);
     }
 
     /**
@@ -51,7 +64,7 @@ class TagController extends Controller
      */
     public function show($id)
     {
-        //
+        return response()->json(Tag::find($id));
     }
 
     /**
@@ -74,7 +87,16 @@ class TagController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $tag = Tag::find($id);
+
+        if ($tag) {
+            $tag->tag_id = $request->get('id');
+            $tag->tag_name = $request->get('tag_name');
+        }
+
+        $tag->save();
+
+        return response()->json($tag);
     }
 
     /**
@@ -85,6 +107,6 @@ class TagController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return response()->json(Tag::find($id));
     }
 }
