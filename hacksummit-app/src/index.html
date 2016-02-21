@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html ng-app="agile">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title page-title></title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <!-- Bootstrap -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">  
+    <!-- Slider -->
+    <link href="assets/libs/plugins/angular-rangeslider/angular.rangeSlider.css" rel="stylesheet">
+    <!-- Fonts  -->
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/simple-line-icons.css">
+    <!--  CSS Animations -->
+    <link href="assets/css/animate.css" rel="stylesheet">
+    <!--  Wizard -->
+    <link href="assets/css/jquery.steps.css" rel="stylesheet">
+     <!-- Switchery -->
+    <link rel="stylesheet" href="assets/libs/plugins/switchery/switchery.min.css">
+    <!-- Calendar demo -->
+    <link rel="stylesheet" href="assets/css/clndr.css">
+    <!-- datatables-->
+    <link rel="stylesheet" href="assets/libs/plugins/dataTables/css/dataTables.css">
+    <!-- iCheck-->
+    <link rel="stylesheet" href="assets/libs/plugins/icheck/css/all.css">
+    <!-- Drop Zone-->
+    <link rel="stylesheet" href="assets/libs/plugins/dropzone/css/dropzone.css">
+    <link rel="stylesheet" href="assets/libs/plugins/dropzone/css/basic.css">
+    <!--  CSS Main -->
+    <link href="assets/css/login.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
+    <link href="assets/css/loading_spinner.css" rel="stylesheet">
+    <!-- Feature detection -->
+
+    <link href="assets/libs/plugins/grossman-picker/daterangepicker.css" rel="stylesheet">
+
+    <!-- Sweet Alert -->
+    <link id="loadBefore" href="assets/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <!-- Toastr -->
+    <link id="loadBefore" href="assets/css/plugins/toastr/angular-toastr.min.css" rel="stylesheet">
+
+    <script src="assets/libs/vendor/modernizr-2.6.2.min.js"></script>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/libs/vendor/html5shiv.js"></script>
+    <script src="assets/libs/vendor/respond.min.js"></script>
+    <![endif]-->
+ 
+</head>
+<body ng-controller="MainController as Main" class="{{Main.$state.current.name}}">
+    <div ui-view></div>
+    <!-- jQuery -->
+    <script src="assets/libs/vendor/jquery-2.1.1.min.js"></script>
+    <script src="assets/libs/plugins/jquery-ui/jquery-ui.js"></script>
+    <script src="assets/libs/bootstrap/bootstrap.min.js"></script>
+    <!-- Angular -->
+    <script src="assets/libs/angular/angular.js"></script>
+    <script src="assets/libs/ui-router/angular-ui-router.min.js"></script>
+    <script src="assets/libs/plugins/oclazyload/dist/ocLazyLoad.min.js"></script>
+    <script src="assets/libs/bootstrap/ui-bootstrap-tpls-0.14.3.js"></script>
+    <script src="assets/libs/angular/angular-animate.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="assets/libs/bootstrap/bootstrap.min.js"></script>
+    <script src="assets/libs/plugins/navgoco/jquery.navgoco.min.js"></script>
+    <!-- Angular App js -->
+    <script src="app/app.js"></script>
+    <script src="app/config.js"></script>
+    <script src="app/directive.js"></script>
+    <script src="app/controller.js"></script>
+    <script src="app/constant.js"></script>
+    <script src="app/filter.js"></script>
+
+
+    <!-- uievents -->
+    <script src="assets/libs/plugins/ui-events/event.js"></script>
+    <!-- Growl -->
+    <script src="assets/libs/plugins/growl/angular-growl-notifications.min.js"></script>
+    <!-- Pace JS -->
+    <script src="assets/libs/plugins/pace/pace.min.js"></script>
+    <!-- Range Slider -->
+    <script src="assets/libs/plugins/angular-rangeslider/angular.rangeSlider.js"></script>
+    <!-- Gauge -->
+    <script src="assets/libs/plugins/gauge/gauge.min.js"></script>
+    <!-- UI Tree -->
+    <script src="assets/libs/plugins/ui-tree/angular-ui-tree.min.js"></script>
+    <!-- switchery -->
+    <script src="assets/libs/plugins/switchery/switchery.min.js"></script>
+    <script src="assets/libs/plugins/switchery/ui-switchery.js"></script>
+    <!-- datatables -->
+    <script src="assets/libs/plugins/dataTables/js/jquery.dataTables.js"></script>
+    <script src="assets/libs/plugins/dataTables/js/dataTables.bootstrap.js"></script>
+    <script src="assets/libs/plugins/dataTables/js/angular-datatables.min.js"></script>
+    <!-- iCheck -->
+    <script src="assets/libs/plugins/icheck/js/icheck.min.js"></script>
+    <!-- Weather  -->
+    <script src="assets/libs/plugins/weather/js/skycons.js"></script>
+    <!-- Calendar  -->
+    <script src="assets/libs/plugins/calendar/moment.js"></script>
+    <script src="assets/libs/plugins/grossman-picker/daterangepicker.js"></script>
+    <script src="assets/libs/plugins/calendar/clndr.js"></script>
+    <!-- File Upload  -->
+    <script src="assets/libs/plugins/dropzone/js/dropzone.min.js"></script>
+    <!-- File Upload  -->
+    <script src="assets/libs/plugins/mask/js/jasny-bootstrap.min.js"></script>
+    <!-- wysiwyg editor  -->
+    <script src="assets/libs/plugins/editors/textAngular-sanitize.js"></script>
+    <script src="assets/libs/plugins/editors/textAngular.min.js"></script>
+    <!-- fullscreen  -->
+    <script src="assets/libs/plugins/fullscreen/jquery.fullscreen-min.js"></script>
+
+	<!-- Home's Scripts -->
+	<script src="app/home/HomeCtrl.js"></script>
+
+	<!-- Notification Scripts -->
+	<script src="assets/libs/plugins/sweetalert/sweetalert.min.js"></script>
+	<script src="assets/libs/plugins/sweetalert/angular-sweetalert.min.js"></script>
+    <script src="assets/libs/plugins/toastr/angular-toastr.tpls.min.js"></script>
+</body>
+</html>
