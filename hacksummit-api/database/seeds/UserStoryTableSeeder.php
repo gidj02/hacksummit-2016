@@ -44,7 +44,7 @@ class UserStoryTableSeeder extends Seeder
             'I can discard my cart'
             );
 
-        foreach(range(1,999) as $index)
+        foreach(range(1, 99) as $index)
         {
             $role = randomElement($roleList);
             $goal = randomElement($goalList);
