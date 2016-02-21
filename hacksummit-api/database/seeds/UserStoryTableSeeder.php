@@ -30,7 +30,7 @@ class UserStoryTableSeeder extends Seeder
             ));
         $roleList = array('User', 'Staff', 'Admin')
         $goalList = array('Place Order', '')
-        $businessValue = array()
+        $businessValueList = array()
 
         foreach(range(1,999) as $index)
         {
