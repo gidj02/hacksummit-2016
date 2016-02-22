@@ -29,7 +29,6 @@ Route::group(['prefix' => 'api/v1', 'middleware' => 'cors'], function(){
     Route::get('user_set', 'UserSetController@index');
     Route::get('user_story', 'UserStoryController@index');
 
-    //Computation
-    Route::post('get_userstories', ['uses' => 'ProjectController@getUserStories']);
-   
+    Route::post('get_userstories','ProjectController@getUserStories'); 
+ 
 });
