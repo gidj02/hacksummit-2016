@@ -21,57 +21,86 @@
                     </div>
                 </div>
                 <div class="panel-body">
-                    <form ng-submit="Project.submitProject($event)">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group"><label class="col-sm-4 control-label">Project Name :</label>
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control" ng-model="Project.project.name" placeholder="Name of your Project" required="">
-                                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <form ng-submit="Project.submitProject($event)">
+                                <div class="form-group"><label class="control-label">Project Name :</label>
+                                    <input type="text" class="form-control" ng-model="Project.project.name" placeholder="Name of your Project" required="">                                
                                 </div>                                                      
-                            </div>
-                            <div class="col-md-6"></div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group"><label class="col-sm-4 control-label">Selected Tags :</label>
-                                    <div class="col-sm-8">
-                                       <div
-                                            isteven-multi-select
-                                            input-model="Project.tags"
-                                            output-model="Project.project.selectegtags"
-                                            button-label="tag"
-                                            item-label="tag"
-                                            tick-property="ticked"
-                                            orientation="horizontal"
-                                            max-height="100px"
-                                            max-labels="5"
-                                        >
-                                        </div>
-                                    </div>                    
+                                <div class="form-group"><label class="control-label">Selected Tags :</label>
+                                   <div
+                                        isteven-multi-select
+                                        input-model="Project.tags"
+                                        output-model="Project.project.selectedtags"
+                                        button-label="tag"
+                                        item-label="tag"
+                                        tick-property="ticked"
+                                        orientation="horizontal"
+                                        max-height="100px"
+                                        max-labels="5"
+                                    >
+                                    </div>                 
                                 </div>     
-                            </div>
+                                <button type="submit" class="btn btn-success">Submit</button>
+                            </form>
                         </div>
-                        <hr>
-                        <button type="submit" class="btn btn-success">Submit</button>
-                    </form>
+
+                        <div class="col-md-6">
+                            <form ng-submit="Project.addTag($event)">
+                                <div class="form-group">
+                                    <label class="control-label">Add Tag :</label>
+                                    <input type="text" class="form-control" ng-model="Project.newTag" placeholder="Add new Tag to your Project" required="">
+                                </div>                                                      
+                                <button type="submit" class="btn btn-primary">Add</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
 
+    <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Suggested Data for your Proejct</h3>
+                    <div class="actions pull-right">
+                    <i data-fullscreen-widget class="fa fa-expand"></i>
+                        <i data-widget-toggle class="fa fa-chevron-down"></i>
+                        <i data-widget-close class="fa fa-times"></i>
+                    </div>
+                </div>
                 <div class="panel-body">
-                    <form ng-submit="Project.addTag($event)">
-                        <div class="form-group">
-                            <label class="col-sm-4 control-label">Add Tag :</label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" ng-model="Project.newTag" placeholder="Add new Tag to your Project" required="">
-                            </div>
-                        </div>                                                      
-                        <button type="submit" class="btn btn-primary">Add</button>
-                    </form>
+                    <div ng-if="!Project.loading">Please supply information for new Project to see the analysis.</div>
+                    <div ng-if="Project.loading">
+                        <h1>{{Project.project.name}}: Approximately 7 weeks</h1>
+                        <small class="font-bold">Time to finished is based on your company's performance on past similar projects..</small>
+            
+                        <h3>These are the tasks with the corresponding hours spent in your team</b></h3>
+                        <br>
+
+                        <accordion close-others="true">
+                            <accordion-group ng-repeat="tag in Project.project.selectedtags" heading="{{tag.tag}}" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
+                               <table class="footable table table-stripped toggle-arrow-tiny">
+                                    <tr>
+                                        <td>After Login clear cache</td>
+                                        <td><strong> 6 hrs.</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>After Login clear cache</td>
+                                        <td><strong> 3 hrs.</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>After Login clear cache</td>
+                                        <td><strong> 3 hrs.</strong></td>
+                                    </tr>
+                                   
+                               </table>
+                            </accordion-group>
+                        </accordion>
+              
+                    </div>
                 </div>
             </div>
         </div>
