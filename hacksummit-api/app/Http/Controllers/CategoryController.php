@@ -21,11 +21,6 @@ class CategoryController extends Controller
         return response()->json(Category::get());
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
 
     /**
      * Store a newly created resource in storage.
@@ -36,8 +31,8 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
 ​
-        $category = Device::create(
-            $request->only('cat_name', 'created_at', 'updated_at', 'id')
+        $category = Category::create(
+            $request->only('cat_name', 'created_at', 'updated_at')
         );
             
         return response()->json($category);
@@ -51,15 +46,8 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        return response()->json(category::find($id));
+        return response()->json(Category::find($id));
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
 
     /**
      * Update the specified resource in storage.
@@ -71,7 +59,7 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         
-        $category = category::find($id);
+        $category = Category::find($id);
 ​
         if ($category) {
             $category->id = $request->get('id');
@@ -93,6 +81,6 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        response()->json(category::destroy($id));
+        response()->json(Category::destroy($id));
     }
 }

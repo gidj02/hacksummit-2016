@@ -40,7 +40,12 @@ class MemberController extends Controller
      */
     public function store(Request $request)
     {
-        //
+​
+        $member = Member::create(
+            $request->only('name', 'username','password', 'role_id', 'skill_set_id', 'user_set_id', 'created_at', 'updated_at')
+        );
+            
+        return response()->json($member);
     }
 
     /**
@@ -51,7 +56,7 @@ class MemberController extends Controller
      */
     public function show($id)
     {
-        //
+        return response()->json(Member::find($id));
     }
 
     /**
@@ -74,7 +79,24 @@ class MemberController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+        $member = Member::find($id);
+​
+        if ($member) {
+            $member->id = $request->get('id');
+            $member->name = $request->get('name');
+            $member->username = $request->get('username');
+            $member->password = $request->get('password');
+            $member->role_id = $request->get('role_id');
+            $member->skill_set_id = $request->get('skill_set_id');
+            $member->user_set_id = $request->get('user_set_id');
+            $member->created_at = $request->get('created_at');
+            $member->updated_at = $request->get('update_at');
+        }
+​
+        $category->save();
+​
+        return response()->json($member);
     }
 
     /**
@@ -85,6 +107,6 @@ class MemberController extends Controller
      */
     public function destroy($id)
     {
-        //
+        response()->json(Member::destroy($id));
     }
 }
