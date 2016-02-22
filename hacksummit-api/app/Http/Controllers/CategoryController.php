@@ -26,10 +26,6 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -39,7 +35,12 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+​
+        $category = Device::create(
+            $request->only('cat_name', 'created_at', 'updated_at', 'id')
+        );
+            
+        return response()->json($category);
     }
 
     /**
@@ -50,7 +51,7 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        //
+        return response()->json(category::find($id));
     }
 
     /**
@@ -59,10 +60,6 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
@@ -73,7 +70,19 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+        $category = category::find($id);
+​
+        if ($category) {
+            $category->id = $request->get('id');
+            $category->cat_name = $request->get('cat_name');
+            $category->created_at = $request->get('created_at');
+            $category->updated_at = $request->get('update_at');
+        }
+​
+        $category->save();
+​
+        return response()->json($category);
     }
 
     /**
@@ -84,6 +93,6 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        response()->json(category::destroy($id));
     }
 }

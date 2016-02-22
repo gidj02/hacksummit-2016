@@ -29,5 +29,4 @@ Route::group(['prefix' => 'api/v1', 'middleware' => 'cors'], function(){
     Route::get('team', 'TeamController@index');
     Route::get('user_set', 'UserSetController@index');
     Route::get('user_story', 'UserStoryController@index');
-
 });
