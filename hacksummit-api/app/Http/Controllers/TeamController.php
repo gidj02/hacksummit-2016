@@ -40,7 +40,11 @@ class TeamController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $team = Team::create(
+            $request->only('member_id', 'team_name','created_at', 'updated_at')
+        );
+            
+        return response()->json($team);
     }
 
     /**
@@ -51,7 +55,7 @@ class TeamController extends Controller
      */
     public function show($id)
     {
-        //
+        return response()->json(Team::find($id));
     }
 
     /**
@@ -74,7 +78,20 @@ class TeamController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+        $team = Team::find($id);
+​
+        if ($team) {
+            $team->id = $request->get('id');
+            $team->member_id = $request->get('member_id');
+            $team->team_name = $request->get('team_name');
+            $team->created_at = $request->get('created_at');
+            $team->updated_at = $request->get('update_at');
+        }
+​
+        $team->save();
+​
+        return response()->json($team);
     }
 
     /**
@@ -85,6 +102,6 @@ class TeamController extends Controller
      */
     public function destroy($id)
     {
-        //
+        response()->json(Team::destroy($id));
     }
 }
