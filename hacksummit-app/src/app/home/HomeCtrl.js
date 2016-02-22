@@ -21,11 +21,11 @@ angular.module('agile')
 	            text: 'Performance Chart',
 	        },
 	        xAxis: {
-	            categories: ['Apples', 'Oranges', 'Pears', 'Bananas', 'Plums']
+	            categories: ['Deadpool Project', '#SELFIE', 'Iska', 'Illuminati Project', 'Burnik']
 	        },
 	        labels: {
 	            items: [{
-	                html: 'Total fruit consumption',
+	                html: 'Project Performance',
 	                style: {
 	                    left: '50px',
 	                    top: '18px',
