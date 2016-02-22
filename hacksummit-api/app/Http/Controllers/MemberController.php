@@ -40,7 +40,7 @@ class MemberController extends Controller
      */
     public function store(Request $request)
     {
-​
+
         $member = Member::create(
             $request->only('name', 'username','password', 'role_id', 'skill_set_id', 'user_set_id', 'created_at', 'updated_at')
         );
@@ -94,7 +94,7 @@ class MemberController extends Controller
             $member->updated_at = $request->get('update_at');
         }
 ​
-        $category->save();
+        $member->save();
 ​
         return response()->json($member);
     }
