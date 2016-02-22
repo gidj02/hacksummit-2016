@@ -23,10 +23,10 @@ Route::group(['prefix' => 'api/v1', 'middleware' => 'cors'], function(){
     Route::get('role', 'RoleController@index');
     Route::get('skill_set', 'SkillSetController@index');
     Route::get('skill', 'SkillController@index');
-    Route::get('tag', 'TagController@index');
+    Route::resource('tag', 'TagController',
+        array('only' => array('index', 'show', 'store', 'destroy')));
     Route::get('task', 'TaskController@index');
     Route::get('team', 'TeamController@index');
     Route::get('user_set', 'UserSetController@index');
     Route::get('user_story', 'UserStoryController@index');
-
 });

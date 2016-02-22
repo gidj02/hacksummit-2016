@@ -21,15 +21,6 @@ class CategoryController extends Controller
         return response()->json(Category::get());
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -39,7 +30,12 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+​
+        $category = Category::create(
+            $request->only('cat_name', 'created_at', 'updated_at')
+        );
+            
+        return response()->json($category);
     }
 
     /**
@@ -50,18 +46,7 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        return response()->json(Category::find($id));
     }
 
     /**
@@ -73,7 +58,19 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+        $category = Category::find($id);
+​
+        if ($category) {
+            $category->id = $request->get('id');
+            $category->cat_name = $request->get('cat_name');
+            $category->created_at = $request->get('created_at');
+            $category->updated_at = $request->get('update_at');
+        }
+​
+        $category->save();
+​
+        return response()->json($category);
     }
 
     /**
@@ -84,6 +81,6 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        response()->json(Category::destroy($id));
     }
 }
