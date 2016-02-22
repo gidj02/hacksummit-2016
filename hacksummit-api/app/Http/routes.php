@@ -30,4 +30,9 @@ Route::group(['prefix' => 'api/v1', 'middleware' => 'cors'], function(){
         array('only' => array('index', 'show', 'store', 'destroy')));
     Route::get('user_set', 'UserSetController@index');
     Route::get('user_story', 'UserStoryController@index');
+    
+    Route::post('get_userstories','ProjectController@getUserStories'); 
+ 
+
 });
+
