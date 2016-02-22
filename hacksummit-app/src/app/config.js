@@ -71,9 +71,9 @@ angular.module('agile')
     .state('project.new_project', {
         url: "/new_project",
         templateUrl: "app/project/new_project.html",
-        controller: 'ProjectCtrl as Project',
+        controller: 'NewProjectCtrl as Project',
         data:{
-            pageTitle: "Welcome",
+            pageTitle: "Start New Project",
         },
         resolve: {
             loadPlugin: function ($ocLazyLoad) {
@@ -85,6 +85,14 @@ angular.module('agile')
                 ]);
             }
         }
+    })
+    .state('project.list', {
+        url: "/list",
+        templateUrl: "app/project/project_list.html",
+        controller: 'ProjectCtrl as Project',
+        data:{
+            pageTitle: "Project List",
+        },
     })
 
     .state('tools', {

@@ -39,7 +39,9 @@
                                         max-height="100px"
                                         max-labels="5"
                                     >
-                                    </div>                 
+                                    </div>  
+                                    <br>
+                                    <h6 class="text-muted"><i>* these tags will relate projects to each other for the analysis of the features complexity and time costs</i></h6>               
                                 </div>     
                                 <button type="submit" class="btn btn-success">Submit</button>
                             </form>
@@ -76,10 +78,10 @@
                     <div ng-if="Project.loading">
                         <h1>{{Project.project.name}}: Approximately 7 weeks</h1>
                         <small class="font-bold">Time to finished is based on your company's performance on past similar projects..</small>
-            
+                        <hr>
                         <h3>These are the tasks with the corresponding hours spent in your team</b></h3>
                         <br>
-
+    
                         <accordion close-others="true">
                             <accordion-group ng-repeat="tag in Project.project.selectedtags" heading="{{tag.tag}}" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
                                <table class="footable table table-stripped toggle-arrow-tiny">
