@@ -6,147 +6,147 @@ angular.module('agile')
 
     Agile.todoList = [
         {
-            content: 'Simply dummy text of the printing and typesetting industry.',
+            content: 'Create Team and Project Controller.',
             date: '12.10.2015',
             statusClass: 'warning',
-            tagName: 'Mark'
+            tagName: 'Cleverbot026'
         },
         {
-            content: 'Many desktop publishing packages and web page editors now use Lorem Ipsum as their default.',
+            content: 'Edit Member Controller.',
             date: '05.04.2015',
             statusClass: 'success',
-            tagName: 'Tag'
+            tagName: 'Cleverbot026'
         },
         {
-            content: 'Sometimes by accident, sometimes on purpose (injected humour and the like).',
+            content: 'Create Member Controller.',
             date: '16.11.2015',
             statusClass: 'info',
-            tagName: 'Mark'
+            tagName: 'Cleverbot026'
         },
         {
-            content: 'All the Lorem Ipsum generators',
+            content: 'Analyze Project Requirement.',
             date: '06.10.2015',
             statusClass: 'danger',
-            tagName: 'Tag'
+            tagName: 'Gidj02'
         },
         {
-            content: 'Which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.',
+            content: 'Add Reminder of Retrospective..',
             date: '09.12.2015',
             statusClass: 'warning',
-            tagName: 'Mark'
+            tagName: 'Gidj02'
         },
         {
-            content: 'Packages and web page editors now use Lorem Ipsum as',
+            content: 'Comment out CSRF token.',
             date: '08.04.2015',
             statusClass: 'warning',
-            tagName: 'Mark'
+            tagName: 'Benigls'
         },
         {
-            content: 'Many desktop publishing packages and web page editors now use Lorem Ipsum as their default.',
+            content: 'Resolve Conflict.',
             date: '05.04.2015',
             statusClass: 'success',
-            tagName: 'Tag'
+            tagName: 'Benigls'
         },
         {
-            content: 'Sometimes by accident, sometimes on purpose (injected humour and the like).',
+            content: 'Update to Resource.',
             date: '16.11.2015',
             statusClass: 'info',
-            tagName: 'Tag'
+            tagName: 'Benigls'
         }
     ];
     Agile.inProgressList = [
         {
-            content: 'Quisque venenatis ante in porta suscipit.',
+            content: 'Add Agile board Module.',
             date: '12.10.2015',
             statusClass: 'success',
-            tagName: 'Mark'
+            tagName: 'Gidj02'
         },
         {
-            content: ' Phasellus sit amet tortor sed enim mollis accumsan in consequat orci.',
+            content: 'Update Tag Controller.',
             date: '05.04.2015',
             statusClass: 'success',
-            tagName: 'Tag'
+            tagName: 'Josersjq'
         },
         {
-            content: 'Nunc sed arcu at ligula faucibus tempus ac id felis. Vestibulum et nulla quis turpis sagittis fringilla.',
+            content: 'Modal on new Project.',
             date: '16.11.2015',
             statusClass: 'warning',
-            tagName: 'Mark'
+            tagName: 'Mmagrasya'
         },
         {
-            content: 'Ut porttitor augue non sapien mollis accumsan. Nulla non elit eget lacus elementum viverra.',
+            content: 'Refactoring code.',
             date: '09.12.2015',
             statusClass: 'warning',
-            tagName: 'Tag'
+            tagName: 'Josersjq'
         },
         {
-            content: 'Packages and web page editors now use Lorem Ipsum as',
+            content: 'Change quantity of user story.',
             date: '08.04.2015',
             statusClass: 'info',
-            tagName: 'Tag'
+            tagName: 'Mmagrasya'
         },
         {
-            content: 'Quisque lacinia tellus et odio ornare maximus.',
+            content: 'Refactoring codes.',
             date: '05.04.2015',
             statusClass: 'success',
-            tagName: 'Mark'
+            tagName: 'Mmagrasya'
         },
         {
-            content: 'Enim mollis accumsan in consequat orci.',
+            content: 'Change template and set up notification and dashboard.',
             date: '11.04.2015',
             statusClass: 'danger',
-            tagName: 'Tag'
+            tagName: 'Mmagrasya'
         }
     ];
     
     Agile.completedList = [
         {
-            content: 'Sometimes by accident, sometimes on purpose (injected humour and the like).',
+            content: 'Remove app, because of conversion to angular problem.',
             date: '16.11.2015',
             statusClass: 'info',
-            tagName: 'Mark'
+            tagName: 'Gidj02'
         },
         {
-            content: 'Ut por$ttitor augue non sapien mollis accumsan. Nulla non elit eget lacus elementum viverra.',
+            content: 'Refactor UserStoryTableSeeder.',
             date: '09.12.2015',
             statusClass: 'warning',
-            tagName: 'Tag'
+            tagName: 'Josersjq'
         },
         {
-            content: 'Which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.',
+            content: 'Memorized Preamble.',
             date: '09.12.2015',
             statusClass: 'warning',
-            tagName: 'Tag'
+            tagName: 'Mmagrasya'
         },
         {
-            content: 'Packages and web page editors now use Lorem Ipsum as',
+            content: 'Daily scrum.',
             date: '08.04.2015',
             statusClass: 'warning',
-            tagName: 'Tag'
+            tagName: 'Gidj02'
         },
         {
-            content: 'Many desktop publishing packages and web page editors now use Lorem Ipsum as their default.',
+            content: 'Create burndown chart module.',
             date: '05.04.2015',
             statusClass: 'success',
-            tagName: 'Mark'
+            tagName: 'Cleverbot026'
         },
         {
-            content: 'Sometimes by accident, sometimes on purpose (injected humour and the like).',
+            content: 'Find Francis.',
             date: '16.11.2015',
             statusClass: 'info',
-            tagName: 'Tag'
+            tagName: 'Deadpool'
         },
         {
-            content: 'Simply dummy text of the printing and typesetting industry.',
+            content: 'Maximum effort on Planning and Design.',
             date: '12.10.2015',
             statusClass: 'warning',
-            tagName: 'Mark'
+            tagName: 'Deadpool'
         },
         {
-            content: 'Many desktop publishing packages and web page editors now use Lorem Ipsum as their default.',
+            content: 'Create repository.',
             date: '05.04.2015',
             statusClass: 'success',
-            tagName: 'Mark'
+            tagName: 'Benigls'
         }
     ];
 
