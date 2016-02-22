@@ -153,5 +153,5 @@ angular.module('agile')
     Agile.sortableOptions = {
         connectWith: ".connectList"
     };
-$
+
 }])

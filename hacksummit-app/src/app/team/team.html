@@ -1,0 +1,135 @@
+<div class="pageheader">
+    <h1>Simulation</h1>
+    <div class="breadcrumb-wrapper hidden-xs">
+        <span class="label">You are here:</span>
+        <ol class="breadcrumb">
+            <li><a href="#/index">Forecrop</a>
+            </li>
+            <li class="active">Simulation</li>
+        </ol>
+    </div>
+</div>
+
+<section id="main-content" class="animated fadeInRight">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group"><label>Teams: </label> 
+                 <select class="form-control input-sm" data-ng-options="team.id as team.name for team in Team.teams" data-ng-model="Team.selectedTeam"></select>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-solid-success widget-mini">
+                <div class="panel-body">
+                    <i class="fa fa-leaf"></i>
+                    <span class="total text-center"><span>Caddawan Porn Site</span></span>
+                    <span class="title text-center">Current Project</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel widget-mini">
+                <div class="panel-body">
+                    <i class="fa fa-bar-chart-o"></i>
+                    <span class="total text-center"><span ng-bind="Season.seasons[Season.selectedSeason-1].crop.controlprod"></span> Sprint 2</span>
+                    <span class="title text-center">Current Sprint</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Performance Trend</h3>
+                    <div class="actions pull-right">
+                        <i data-fullscreen-widget class="fa fa-expand"></i>
+                        <i data-widget-toggle class="fa fa-chevron-down"></i>
+                        <i data-widget-close class="fa fa-times"></i>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="performance" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                <h3 class="panel-title">Meet The Team</h3>
+                    <div class="actions pull-right">
+                        <i data-fullscreen-widget class="fa fa-expand"></i>
+                        <i data-widget-toggle class="fa fa-chevron-down"></i>
+                        <i data-widget-close class="fa fa-times"></i>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="sortable-list connectList agile-list">
+                                <li class="success-element">
+                                    <div class="avatar pull-right">
+                                        <img class="img-circle profile-image" style="height:50px; width:50px" src="assets/img/avatar5.png">
+                                    </div>
+                                    Gino I. de Jesus
+                                    <div class="agile-detail">
+                                        <a href="#" class="pull-right btn btn-xs btn-white">Product Owner</a>
+                                        <i class="fa fa-users"></i>
+                                    </div>
+                                </li>
+                                <li class="success-element">
+                                    <div class="avatar pull-right">
+                                        <img class="img-circle profile-image" style="height:50px; width:50px" src="assets/img/avatar1.png">
+                                    </div>
+                                    Benjamin Iglesia
+                                    <div class="agile-detail">
+                                        <a href="#" class="pull-right btn btn-xs btn-white">Scrum Master</a>
+                                        <i class="fa fa-users"></i> 
+                                    </div>
+                                </li>
+                                <li class="success-element">
+                                    <div class="avatar pull-right">
+                                        <img class="img-circle profile-image" style="height:50px; width:50px" src="assets/img/avatar2.png">
+                                    </div>
+                                    Gerald Magracia
+                                    <div class="agile-detail">
+                                        <a href="#" class="pull-right btn btn-xs btn-white">Team Member</a>
+                                        <i class="fa fa-users"></i> 
+                                    </div>
+                                </li>
+                                <li class="success-element">
+                                    <div class="avatar pull-right">
+                                        <img class="img-circle profile-image" style="height:50px; width:50px" src="assets/img/avatar3.png">
+                                    </div>
+                                    Jose San Juan
+                                    <div class="agile-detail">
+                                        <a href="#" class="pull-right btn btn-xs btn-white">Team Member</a>
+                                        <i class="fa fa-users"></i> 
+                                    </div>
+                                </li>
+                                <li class="success-element">
+                                    <div class="avatar pull-right">
+                                        <img class="img-circle profile-image" style="height:50px; width:50px" src="assets/img/flat-avatar.png">
+                                    </div>
+                                    James Labnao
+                                    <div class="agile-detail">
+                                        <a href="#" class="pull-right btn btn-xs btn-white">Team Member</a>
+                                        <i class="fa fa-users"></i> 
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</section>
+
