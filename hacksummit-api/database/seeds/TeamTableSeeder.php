@@ -23,7 +23,7 @@ class TeamTableSeeder extends Seeder
         {
             Team::create(array(
                 'member_id' => $faker->randomDigitNotNull(),
-                'team_name' => $teamList[index] . ' Team ' . $faker()->randomDigitNotNull()
+                'team_name' => $teamList[$index] . ' Team ' . $faker()->randomDigitNotNull()
             ));
         }
     }
