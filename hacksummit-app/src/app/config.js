@@ -21,6 +21,46 @@ angular.module('agile')
         data:{
             pageTitle: "Welcome",
         },
+        resolve: {
+            loadPlugin: function ($ocLazyLoad) {
+                return $ocLazyLoad.load([
+                    {
+                        serie: true,
+                        files: [
+                                    'assets/libs/plugins/highcharts/highstocks.js',
+                                    'assets/libs/plugins/highcharts/exporting.js',
+                                ]
+                    },
+                ]);
+            }
+        }
+    })
+
+    .state('team', {    
+        templateUrl: "assets/views/base.html",
+        abstract: true,
+        url: "/team",
+    })
+    .state('team.summary', {
+        url: "/summary",
+        templateUrl: "app/team/team.html",
+        controller: 'TeamCtrl as Team',
+        data:{
+            pageTitle: "Team Summary",
+        },
+        resolve: {
+            loadPlugin: function ($ocLazyLoad) {
+                return $ocLazyLoad.load([
+                    {
+                        serie: true,
+                        files: [
+                                    'assets/libs/plugins/highcharts/highstocks.js',
+                                    'assets/libs/plugins/highcharts/exporting.js',
+                                ]
+                    },
+                ]);
+            }
+        }
     })
 
     .state('project', {    
@@ -31,9 +71,9 @@ angular.module('agile')
     .state('project.new_project', {
         url: "/new_project",
         templateUrl: "app/project/new_project.html",
-        controller: 'ProjectCtrl as Project',
+        controller: 'NewProjectCtrl as Project',
         data:{
-            pageTitle: "Welcome",
+            pageTitle: "Start New Project",
         },
         resolve: {
             loadPlugin: function ($ocLazyLoad) {
@@ -46,6 +86,37 @@ angular.module('agile')
             }
         }
     })
+    .state('project.list', {
+        url: "/list",
+        templateUrl: "app/project/project_list.html",
+        controller: 'ProjectCtrl as Project',
+        data:{
+            pageTitle: "Project List",
+        },
+    })
+
+    .state('tools', {
+        templateUrl: "assets/views/base.html",
+        abstract: true,
+        url: "/tools"
+    })
+
+    .state('tools.agile_board', {
+            url: "/agile_board",
+            templateUrl: "app/tools/agile_board/agile_board.html",
+            controller: "AgileBoardCtrl as Agile",
+            data: { pageTitle: 'Agile board' },
+            resolve: {
+                loadPlugin: function ($ocLazyLoad) {
+                    return $ocLazyLoad.load([
+                        {
+                            name: 'ui.sortable',
+                            files: ['assets/libs/plugins/ui-sortable/sortable.js']
+                        },
+                    ]);
+                }
+            }
+        })
 
 
     /* =============================================

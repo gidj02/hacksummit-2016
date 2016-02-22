@@ -1,19 +1,25 @@
 angular.module('agile')
 
-.controller('HomeCtrl', ['$state', function ($state){
-	Home = this;
+.controller('TeamCtrl', ['$state', '$uibModal', function ($state, $uibModal){
+    Team = this;
+    Team.teams = [{id:1, name: 'Gino Team'},
+                  {id:2, name: 'Ben Team'},]
+    Team.selectedTeam = 1;
+    Team.chart = '';
 
-	this.$state = $state;
-	Home.chart = [];
+    Team.animationTime = 10;
+    Team.value = 3200;
+    Team.maxValue = 5000;
+    Team.gaugeType = 'gauge';
 
-	Home.createPerformanceChart = function (){
+    Team.createPerformanceChart = function (){
 		Highcharts.setOptions({
             global : {
                 useUTC : false
             }
         });
 
-		Home.chart = new Highcharts.Chart({
+		Team.chart = new Highcharts.Chart({
 			chart: {
 				renderTo: 'performance',
 			},
@@ -80,10 +86,9 @@ angular.module('agile')
 	    });
 	}
 
-   	Home.init = function () {
-   		Home.createPerformanceChart ();
-   	}
+	Team.init = function () {
+		Team.createPerformanceChart ();
+	}
 
-   	Home.init ();
-
+	Team.init();
 }])
