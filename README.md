@@ -4,6 +4,12 @@ DataScrum is a decision support system that help the companies in increasing the
 
 This is our entry for the [hack.summit() Virtual Hackathon 2016](https://www.koding.com/Hackathon).
 
+## URL
+
+Web-app: [http://169.45.223.121/#/home](http://169.45.223.121/#/home)
+
+Web-api: [http://169.45.223.121:8000/](http://169.45.223.121:8000/)
+
 
 ## DataScrum API Docs
 
