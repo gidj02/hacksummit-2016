@@ -36,6 +36,33 @@ angular.module('agile')
         }
     })
 
+    .state('team', {    
+        templateUrl: "assets/views/base.html",
+        abstract: true,
+        url: "/team",
+    })
+    .state('team.summary', {
+        url: "/summary",
+        templateUrl: "app/team/team.html",
+        controller: 'TeamCtrl as Team',
+        data:{
+            pageTitle: "Team Summary",
+        },
+        resolve: {
+            loadPlugin: function ($ocLazyLoad) {
+                return $ocLazyLoad.load([
+                    {
+                        serie: true,
+                        files: [
+                                    'assets/libs/plugins/highcharts/highstocks.js',
+                                    'assets/libs/plugins/highcharts/exporting.js',
+                                ]
+                    },
+                ]);
+            }
+        }
+    })
+
     .state('project', {    
         templateUrl: "assets/views/base.html",
         abstract: true,
