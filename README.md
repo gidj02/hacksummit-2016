@@ -7,6 +7,10 @@ This is our entry for the [hack.summit() Virtual Hackathon 2016](https://www.kod
 
 ## DataScrum API Docs
 
+##### `/api/v1/get_userstories` `POST`
+This endpoint gets a *list of tags* and returns the suggested user stories.
+
+
 ##### `/api/v1/category` `GET, POST, DELETE, PUT`
 
 ##### `/api/v1/member` `GET, POST, DELETE, PUT`
