@@ -19,72 +19,58 @@ angular.module('agile')
             }
         });
 
-		Team.chart = new Highcharts.Chart({
-			chart: {
-				renderTo: 'performance',
-			},
-       		title: {
-	            text: 'Performance Chart',
-	        },
-	        xAxis: {
-	            categories: ['Apples', 'Oranges', 'Pears', 'Bananas', 'Plums']
-	        },
-	        labels: {
-	            items: [{
-	                html: 'Total fruit consumption',
-	                style: {
-	                    left: '50px',
-	                    top: '18px',
-	                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'black'
-	                }
-	            }]
-	        },
-	        series: [{
-	            type: 'column',
-	            name: 'Jane',
-	            data: [3, 2, 1, 3, 4]
-	        }, {
-	            type: 'column',
-	            name: 'John',
-	            data: [2, 3, 5, 7, 6]
-	        }, {
-	            type: 'column',
-	            name: 'Joe',
-	            data: [4, 3, 3, 9, 0]
-	        }, {
-	            type: 'spline',
-	            name: 'Average',
-	            data: [3, 2.67, 3, 6.33, 3.33],
-	            marker: {
-	                lineWidth: 2,
-	                lineColor: Highcharts.getOptions().colors[3],
-	                fillColor: 'white'
-	            }
-	        }, {
-	            type: 'pie',
-	            name: 'Total consumption',
-	            data: [{
-	                name: 'Jane',
-	                y: 13,
-	                color: Highcharts.getOptions().colors[0] // Jane's color
-	            }, {
-	                name: 'John',
-	                y: 23,
-	                color: Highcharts.getOptions().colors[1] // John's color
-	            }, {
-	                name: 'Joe',
-	                y: 19,
-	                color: Highcharts.getOptions().colors[2] // Joe's color
-	            }],
-	            center: [100, 80],
-	            size: 100,
-	            showInLegend: false,
-	            dataLabels: {
-	                enabled: false
-	            }
-	        }]
-	    });
-	}
+	Team.chart = new Highcharts.Chart({
+	    chart: {
+		plotBackgroundColor: null,
+		plotBorderWidth: 0,
+		plotShadow: false,
+		renderTo:'performance',
+	    },
+	    title: {
+		text: 'Sprint<br>performance',
+		align: 'center',
+		verticalAlign: 'middle',
+		y: 40
+	    },
+	    tooltip: {
+		pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+	    },
+	    plotOptions: {
+		pie: {
+		    dataLabels: {
+			enabled: true,
+			distance: -50,
+			style: {
+			    fontWeight: 'bold',
+			    color: 'white',
+			    textShadow: '0px 1px 2px black'
+			}
+		    },
+		    startAngle: -90,
+		    endAngle: 90,
+		    center: ['50%', '75%']
+		}
+	    },
+	    series: [{
+		type: 'pie',
+		name: 'Sprint performance',
+		innerSize: '50%',
+		data: [
+		    ['Backlog',   10.38],
+		    ['In-progress',       56.33],
+		    ['To-do', 29.71],
+		    {
+			name: 'Proprietary or Undetectable',
+			y: 0.2,
+			dataLabels: {
+			    enabled: false
+			}
+		    }
+		]
+	    }]
+	});
+    }
+
 
 	Team.init = function () {
 		Team.createPerformanceChart ();
