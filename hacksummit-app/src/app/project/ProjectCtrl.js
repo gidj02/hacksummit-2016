@@ -5,6 +5,7 @@ angular.module('agile')
 
 	Project.project = [];
 	Project.newTag = '';
+	Project.loading = false;
 
 	Project.tags = [
 		{tag:"Transaction", ticked:false},
@@ -21,8 +22,11 @@ angular.module('agile')
 	}
 
 	Project.submitProject = function (e) {
+		Project.loading = true;
 		e.preventDefault();
-		Project.openSuggestionModal();
+		Project.projectTags = Project.project.selectedtags;
+		console.log(Project.project.selectedtags);
+		// Project.openSuggestionModal();
 	}
 
 	Project.openSuggestionModal = function () {
