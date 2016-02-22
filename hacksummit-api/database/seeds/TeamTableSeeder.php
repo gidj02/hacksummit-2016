@@ -21,9 +21,10 @@ class TeamTableSeeder extends Seeder
         $teamList = array('Development', 'QA', 'Design', 'SEO', 'Sales' );
         foreach(range(0,19)as $index)
         {
+            $number = $faker->randomDigitNotNull();
             Team::create(array(
                 'member_id' => $faker->randomDigitNotNull(),
-                'team_name' => $teamList[$index] . ' Team ' . $faker()->randomDigitNotNull()
+                'team_name' => $faker->randomElement($teamList) . ' Team ' . $number
             ));
         }
     }
