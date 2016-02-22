@@ -25,9 +25,9 @@ Route::group(['prefix' => 'api/v1', 'middleware' => 'cors'], function(){
     Route::get('skill', 'SkillController@index');
     Route::resource('tag', 'TagController',
         array('only' => array('index', 'show', 'store', 'destroy')));
-    Route::resource('task', 'TaskController',
+    Route::get('task', 'TaskController@index');
+    Route::resource('team', 'TeamController',
         array('only' => array('index', 'show', 'store', 'destroy')));
-    Route::get('team', 'TeamController@index');
     Route::get('user_set', 'UserSetController@index');
     Route::get('user_story', 'UserStoryController@index');
 });

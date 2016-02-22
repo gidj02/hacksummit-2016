@@ -43,7 +43,7 @@ class TeamController extends Controller
         $team = Team::create(
             $request->only('member_id', 'team_name','created_at', 'updated_at')
         );
-            
+
         return response()->json($team);
     }
 
@@ -78,9 +78,9 @@ class TeamController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+
         $team = Team::find($id);
-​
+
         if ($team) {
             $team->id = $request->get('id');
             $team->member_id = $request->get('member_id');
@@ -88,9 +88,9 @@ class TeamController extends Controller
             $team->created_at = $request->get('created_at');
             $team->updated_at = $request->get('update_at');
         }
-​
+
         $team->save();
-​
+
         return response()->json($team);
     }
 
