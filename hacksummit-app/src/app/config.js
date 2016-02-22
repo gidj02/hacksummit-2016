@@ -78,9 +78,6 @@ angular.module('agile')
                             name: 'ui.sortable',
                             files: ['assets/libs/plugins/ui-sortable/sortable.js']
                         },
-                        {
-                            files: ['assets/css/agile_board.css']
-                        }
                     ]);
                 }
             }

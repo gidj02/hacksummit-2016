@@ -18,7 +18,7 @@ angular.module('agile')
 				renderTo: 'performance',
 			},
        		title: {
-	            text: 'Combination chart',
+	            text: 'Performance Chart',
 	        },
 	        xAxis: {
 	            categories: ['Apples', 'Oranges', 'Pears', 'Bananas', 'Plums']
